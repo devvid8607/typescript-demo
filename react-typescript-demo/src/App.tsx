@@ -1,17 +1,21 @@
-import React from 'react';
-import './App.css';
-import { Heading } from './components/Heading';
-import { Oscar } from './components/Oscar';
-import { Greet } from './components/Greet';
-import { Button } from './components/Button';
-import { Input } from './components/Input';
-import { Container } from './components/Container';
+import React from "react";
+import "./App.css";
+import { Counter } from "./components/state/Counter";
+import { LoggedIn } from "./components/state/LoggedIn";
+import { User } from "./components/state/User";
+import { ThemeContextProvider } from "./components/context/ThemeContext";
+import { Box } from "./components/context/Box";
+// import { Heading } from './components/Heading';
+// import { Oscar } from './components/Oscar';
+// import { Greet } from './components/Greet';
+// import { Button } from './components/Button';
+// import { Input } from './components/Input';
+// import { Container } from './components/Container';
 // import { Person } from './components/Person';
 // import { PersonList } from './components/PersonList';
 // import { Status } from './components/Status';
 
 function App() {
-
   // const PersonsList=[{first:'Vidhya',last:'Ramamoorthy'},{first:'Gautham',last:'VinodKrish'},{first:'Usha',last:'KR'}]
   // const PersonName={
   //   first:'Gautham',
@@ -19,18 +23,21 @@ function App() {
   // }
   return (
     <div className="App">
-      <Greet name='Gautham' isLoggedIn={false}/>
+      {/* <Greet name='Gautham' isLoggedIn={false}/> */}
       {/* <Person name={PersonName}/>
       <PersonList names={PersonsList}/>
       <Status status='loading'/> */}
-      <Heading>Placeholder Children</Heading>
+      {/* <Heading>Placeholder Children</Heading>
       <Oscar><Heading>Oscar goes to Decaprio</Heading></Oscar>
       <Input value='' handleChange={(event)=>console.log(event)}></Input>
       <Button handleClick={(event,id)=>console.log('Button Clicked',event,id )}/>
-      <Container styles={{border:'1px solid black'}}></Container>
-
-     
-
+      <Container styles={{border:'1px solid black'}}></Container> */}
+      <LoggedIn />
+      <User />
+      <Counter />
+      <ThemeContextProvider>
+        <Box />
+      </ThemeContextProvider>
     </div>
   );
 }
